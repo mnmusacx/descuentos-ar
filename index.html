@@ -576,67 +576,26 @@ function init(data) {
   });
 }
 
-// Cargar datos — en dev podés pasar un JSON local; en prod viene de GitHub Pages
+const DEMO_PROMOS = [
+  { entidad:"Banco Galicia", tipo_entidad:"banco", categoria:"supermercado", descripcion:"30% de descuento en Coto los martes y jueves", descuento_pct:30, tope_ars:5000, cuotas_sin_interes:null, reintegro_pct:null, medio_pago:["Tarjeta Galicia Visa","Tarjeta Galicia Mastercard"], dias_semana:["martes","jueves"], vigencia_hasta:"2025-12-31", como_obtener:"Pagá con tu tarjeta Galicia al momento de la compra. No requiere activación previa.", url_origen:"https://www.bancogalicia.com/personas/tarjetas/beneficios.html", fuente_id:"galicia", score_conveniencia:8 },
+  { entidad:"Naranja X", tipo_entidad:"fintech", categoria:"gastronomia", descripcion:"25% reintegro en Rappi, PedidosYa y Uber Eats", descuento_pct:null, tope_ars:3000, cuotas_sin_interes:null, reintegro_pct:25, medio_pago:["Tarjeta Naranja X Visa"], dias_semana:["todos"], vigencia_hasta:null, como_obtener:"Seleccioná Naranja X como medio de pago en la app de delivery.", url_origen:"https://www.naranjax.com/beneficios", fuente_id:"naranja", score_conveniencia:7 },
+  { entidad:"Shell Box", tipo_entidad:"combustible", categoria:"combustible", descripcion:"20% de descuento en combustible los domingos", descuento_pct:20, tope_ars:8000, cuotas_sin_interes:null, reintegro_pct:null, medio_pago:["Santander Visa","Santander Mastercard"], dias_semana:["domingo"], vigencia_hasta:null, como_obtener:"Descargá Shell Box, vinculá tu tarjeta Santander y escaneá el QR en la estación.", url_origen:"https://www.shell.com.ar", fuente_id:"shell", score_conveniencia:9 },
+  { entidad:"Modo", tipo_entidad:"app_pago", categoria:"farmacia", descripcion:"15% reintegro en farmacias adheridas", descuento_pct:null, tope_ars:2000, cuotas_sin_interes:null, reintegro_pct:15, medio_pago:["Modo (cualquier banco adherido)"], dias_semana:["lunes","miercoles","viernes"], vigencia_hasta:null, como_obtener:"Abrí Modo, elegí la farmacia adherida y pagá con QR.", url_origen:"https://www.modo.com.ar/beneficios", fuente_id:"modo", score_conveniencia:6 },
+  { entidad:"Banco Nación", tipo_entidad:"banco", categoria:"combustible", descripcion:"12 cuotas sin interés en YPF Serviclub", descuento_pct:null, tope_ars:null, cuotas_sin_interes:12, reintegro_pct:null, medio_pago:["BNA Visa","BNA Mastercard"], dias_semana:["todos"], vigencia_hasta:"2025-06-30", como_obtener:"Pagá con tu tarjeta BNA al retirar el auto. Indicá al cajero que querés cuotas.", url_origen:"https://www.bna.com.ar/Personas/Beneficios", fuente_id:"nacion", score_conveniencia:5 }
+];
+
+// Cargar datos reales; si están vacíos o hay error, mostrar demo
 fetch('./data/descuentos.json')
   .then(r => r.json())
-  .then(init)
+  .then(data => {
+    if (!data.promos || data.promos.length === 0) {
+      data.promos = DEMO_PROMOS;
+      data._demo = true;
+    }
+    init(data);
+  })
   .catch(() => {
-    // Fallback con datos de demo para previsualizar el dashboard
-    init({
-      generado_en: new Date().toISOString(),
-      promos: [
-        {
-          entidad: "Banco Galicia", tipo_entidad: "banco", categoria: "supermercado",
-          descripcion: "30% de descuento en Coto los martes y jueves",
-          descuento_pct: 30, tope_ars: 5000, cuotas_sin_interes: null, reintegro_pct: null,
-          medio_pago: ["Tarjeta Galicia Visa", "Tarjeta Galicia Mastercard"],
-          dias_semana: ["martes","jueves"], vigencia_hasta: "2025-12-31",
-          como_obtener: "Pagá con tu tarjeta Galicia al momento de la compra. No requiere activación previa.",
-          url_origen: "https://www.bancogalicia.com/personas/tarjetas/beneficios.html",
-          fuente_id: "galicia", score_conveniencia: 8
-        },
-        {
-          entidad: "Naranja X", tipo_entidad: "fintech", categoria: "gastronomia",
-          descripcion: "25% reintegro en Rappi, PedidosYa y Uber Eats",
-          descuento_pct: null, tope_ars: 3000, cuotas_sin_interes: null, reintegro_pct: 25,
-          medio_pago: ["Tarjeta Naranja X Visa"],
-          dias_semana: ["todos"], vigencia_hasta: null,
-          como_obtener: "Seleccioná Naranja X como medio de pago en la app de delivery. El reintegro se acredita en 72hs hábiles.",
-          url_origen: "https://www.naranjax.com/beneficios",
-          fuente_id: "naranja", score_conveniencia: 7
-        },
-        {
-          entidad: "Shell Box", tipo_entidad: "combustible", categoria: "combustible",
-          descripcion: "20% de descuento en combustible los domingos",
-          descuento_pct: 20, tope_ars: 8000, cuotas_sin_interes: null, reintegro_pct: null,
-          medio_pago: ["Santander Visa", "Santander Mastercard"],
-          dias_semana: ["domingo"], vigencia_hasta: "2025-03-31",
-          como_obtener: "Descargá Shell Box, vinculá tu tarjeta Santander y escaneá el QR en la estación.",
-          url_origen: "https://www.shell.com.ar/motoristas/shell-box/beneficios.html",
-          fuente_id: "shell", score_conveniencia: 9
-        },
-        {
-          entidad: "Modo", tipo_entidad: "app_pago", categoria: "farmacia",
-          descripcion: "15% reintegro en farmacias adheridas",
-          descuento_pct: null, tope_ars: 2000, cuotas_sin_interes: null, reintegro_pct: 15,
-          medio_pago: ["Modo (cualquier banco adherido)"],
-          dias_semana: ["lunes","miercoles","viernes"], vigencia_hasta: null,
-          como_obtener: "Abrí Modo, elegí la farmacia adherida y pagá con QR. El reintegro llega a tu cuenta en 5 días hábiles.",
-          url_origen: "https://www.modo.com.ar/beneficios",
-          fuente_id: "modo", score_conveniencia: 6
-        },
-        {
-          entidad: "Banco Nación", tipo_entidad: "banco", categoria: "combustible",
-          descripcion: "12 cuotas sin interés en YPF Serviclub",
-          descuento_pct: null, tope_ars: null, cuotas_sin_interes: 12, reintegro_pct: null,
-          medio_pago: ["BNA Visa","BNA Mastercard"],
-          dias_semana: ["todos"], vigencia_hasta: "2025-06-30",
-          como_obtener: "Pagá el servicio con tu tarjeta BNA al retirar el auto. Indicá al cajero que querés cuotas.",
-          url_origen: "https://www.bna.com.ar/Personas/Beneficios",
-          fuente_id: "nacion", score_conveniencia: 5
-        }
-      ]
-    });
+    init({ generado_en: new Date().toISOString(), promos: DEMO_PROMOS, _demo: true });
   });
 </script>
 </body>
