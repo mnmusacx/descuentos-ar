@@ -1,1 +1,68 @@
+name: Scraper semanal de descuentos AR
+
+on:
+  schedule:
+    # Todos los lunes a las 7:00 AM Argentina (UTC-3) = 10:00 UTC
+    - cron: '0 10 * * 1'
+  workflow_dispatch:
+    # Permite correrlo manualmente desde la UI de GitHub
+
+permissions:
+  contents: write   # Para hacer push del JSON actualizado
+  pages: write      # Para deploy a GitHub Pages
+  id-token: write
+
+jobs:
+  scrape-y-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Instalar dependencias
+        run: pip install requests beautifulsoup4 anthropic
+
+      - name: Correr scraper completo (bancos + Telegram + RSS)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          cd scrapers
+          python main.py
+
+      - name: Verificar output
+        run: |
+          python -c "
+          import json
+          with open('data/descuentos.json') as f:
+              d = json.load(f)
+          print(f'Total promos: {d[\"total_promos\"]}')
+          print(f'Oficiales: {d[\"fuentes\"][\"oficiales\"]}  Social: {d[\"fuentes\"][\"sociales\"]}')
+          print(f'Categorias: {d[\"por_categoria\"]}')
+          for p in d['promos'][:5]:
+              score = p.get('score_conveniencia', 0)
+              print(f'  [{score}/10] {p[\"entidad\"]}: {p[\"descripcion\"][:55]}')
+          "
+
+      - name: Commit y push del JSON actualizado
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/descuentos.json
+          git diff --cached --quiet || git commit -m "chore: descuentos $(date '+%Y-%m-%d')"
+          git push
+
+      - name: Deploy a GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          exclude_assets: '.github,scrapers,README.md,requirements.txt'
 
