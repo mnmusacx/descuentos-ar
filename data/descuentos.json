@@ -1,0 +1,80 @@
+{
+  "generado_en": "2026-04-08T23:34:02.465779",
+  "total_promos": 3,
+  "por_categoria": {
+    "gastronomia": 1,
+    "servicios": 2
+  },
+  "fuentes": {
+    "oficiales": 0,
+    "sociales": 3
+  },
+  "promos": [
+    {
+      "entidad": "PedidosYa",
+      "tipo_entidad": "app_pago",
+      "categoria": "gastronomia",
+      "descripcion": "Descuento de $400 en primer pedido en Restaurantes con código SUMATE-T61A546",
+      "descuento_pct": null,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": null,
+      "tope_ars": null,
+      "medio_pago": [
+        "no especificado"
+      ],
+      "dias_semana": [
+        "todos"
+      ],
+      "vigencia_hasta": null,
+      "como_obtener": "Usar código SUMATE-T61A546 o entrar por link en primer pedido",
+      "url_origen": null,
+      "score_conveniencia": 5,
+      "fuente_id": "tg_descuentosarg",
+      "fuente_tipo": "social"
+    },
+    {
+      "entidad": "Mercado Pago",
+      "tipo_entidad": "fintech",
+      "categoria": "servicios",
+      "descripcion": "Descuento de $300 en primer pago (recarga, servicios, transporte o QR)",
+      "descuento_pct": null,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": null,
+      "tope_ars": null,
+      "medio_pago": [
+        "Mercado Pago"
+      ],
+      "dias_semana": [
+        "todos"
+      ],
+      "vigencia_hasta": null,
+      "como_obtener": "Descargar la app desde el link de referido y usar en el primer pago",
+      "url_origen": null,
+      "score_conveniencia": 5,
+      "fuente_id": "tg_descuentosarg",
+      "fuente_tipo": "social"
+    },
+    {
+      "entidad": "Belo",
+      "tipo_entidad": "fintech",
+      "categoria": "servicios",
+      "descripcion": "Bono de 3 DAI (~$600) para usuarios nuevos que carguen $50 y compren cripto",
+      "descuento_pct": null,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": null,
+      "tope_ars": null,
+      "medio_pago": [
+        "Belocard"
+      ],
+      "dias_semana": [
+        "todos"
+      ],
+      "vigencia_hasta": null,
+      "como_obtener": "Registrarse con link de referido, validar cuenta, cargar $50 y comprar cualquier cripto",
+      "url_origen": null,
+      "score_conveniencia": 4,
+      "fuente_id": "tg_descuentosarg",
+      "fuente_tipo": "social"
+    }
+  ]
+}

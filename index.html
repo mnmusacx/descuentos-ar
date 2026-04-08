@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Descuentos AR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0f12;
+    --surface: #161920;
+    --surface2: #1e2330;
+    --border: #2a2f3d;
+    --accent: #c8f135;
+    --accent2: #3bffc8;
+    --text: #e8eaf0;
+    --muted: #6b7280;
+    --red: #ff5252;
+    --amber: #ffb84d;
+    --score-high: #c8f135;
+    --score-mid: #ffb84d;
+    --score-low: #ff7043;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo-title {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1;
+  }
+
+  .logo-title span {
+    color: var(--accent);
+  }
+
+  .logo-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+    letter-spacing: 0.05em;
+  }
+
+  .header-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    text-align: right;
+  }
+
+  #update-date {
+    color: var(--accent2);
+  }
+
+  /* ── Filtros ── */
+  .filters {
+    padding: 16px 32px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .filter-group {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .filter-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding-right: 4px;
+  }
+
+  .pill {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+
+  .pill:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .pill.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #0d0f12;
+    font-weight: 500;
+  }
+
+  .search-wrap {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  #search {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  #search:focus {
+    border-color: var(--accent);
+  }
+
+  #search::placeholder {
+    color: var(--muted);
+  }
+
+  /* ── Stats bar ── */
+  .stats-bar {
+    padding: 10px 32px;
+    display: flex;
+    gap: 24px;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    display: flex;
+    gap: 6px;
+    align-items: baseline;
+  }
+
+  .stat-num {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  /* ── Grid de cards ── */
+  #grid {
+    padding: 24px 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 14px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: border-color 0.15s, transform 0.1s;
+    cursor: default;
+  }
+
+  .card:hover {
+    border-color: var(--accent);
+    transform: translateY(-1px);
+  }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .card-entidad {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .card-tipo {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: var(--surface2);
+    padding: 2px 8px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  .card-desc {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.35;
+  }
+
+  .card-badges {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+
+  .badge-descuento {
+    background: rgba(200, 241, 53, 0.12);
+    color: var(--accent);
+    border: 1px solid rgba(200, 241, 53, 0.25);
+  }
+
+  .badge-reintegro {
+    background: rgba(59, 255, 200, 0.1);
+    color: var(--accent2);
+    border: 1px solid rgba(59, 255, 200, 0.2);
+  }
+
+  .badge-cuotas {
+    background: rgba(255, 184, 77, 0.1);
+    color: var(--amber);
+    border: 1px solid rgba(255, 184, 77, 0.2);
+  }
+
+  .badge-tope {
+    background: rgba(255, 82, 82, 0.1);
+    color: var(--red);
+    border: 1px solid rgba(255, 82, 82, 0.2);
+  }
+
+  .card-medios {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+  }
+
+  .card-como {
+    font-size: 12px;
+    color: var(--muted);
+    background: var(--surface2);
+    border-left: 2px solid var(--border);
+    padding: 6px 10px;
+    border-radius: 0 4px 4px 0;
+    line-height: 1.4;
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2px;
+  }
+
+  .card-vigencia {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+  }
+
+  .score-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .score-dots {
+    display: flex;
+    gap: 2px;
+  }
+
+  .score-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--border);
+    transition: background 0.2s;
+  }
+
+  .score-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+  }
+
+  .card-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .card-link:hover { color: var(--accent); }
+
+  /* ── Empty state ── */
+  #empty {
+    display: none;
+    padding: 60px 32px;
+    text-align: center;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+  }
+
+  /* ── Loading ── */
+  #loading {
+    padding: 60px 32px;
+    text-align: center;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+  }
+
+  /* ── Dias pills ── */
+  .dias-pills {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .dia-pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: var(--surface2);
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .dia-pill.hoy {
+    background: rgba(200, 241, 53, 0.15);
+    color: var(--accent);
+  }
+
+  @media (max-width: 600px) {
+    header, .filters, .stats-bar, #grid { padding-left: 16px; padding-right: 16px; }
+    #grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-title">descuentos<span>.ar</span></div>
+    <div class="logo-sub">actualizado cada lunes · datos normalizados con IA</div>
+  </div>
+  <div class="header-meta">
+    <div>última actualización</div>
+    <div id="update-date">cargando...</div>
+  </div>
+</header>
+
+<div class="filters">
+  <div class="filter-group">
+    <span class="filter-label">cat</span>
+    <button class="pill active" data-filter="cat" data-val="todos">todas</button>
+    <button class="pill" data-filter="cat" data-val="supermercado">supermercado</button>
+    <button class="pill" data-filter="cat" data-val="gastronomia">gastro</button>
+    <button class="pill" data-filter="cat" data-val="combustible">combustible</button>
+    <button class="pill" data-filter="cat" data-val="farmacia">farmacia</button>
+    <button class="pill" data-filter="cat" data-val="viajes">viajes</button>
+    <button class="pill" data-filter="cat" data-val="entretenimiento">entret.</button>
+  </div>
+  <div class="filter-group">
+    <span class="filter-label">día</span>
+    <button class="pill active" data-filter="dia" data-val="todos">todos</button>
+    <button class="pill" data-filter="dia" data-val="lunes">lun</button>
+    <button class="pill" data-filter="dia" data-val="martes">mar</button>
+    <button class="pill" data-filter="dia" data-val="miercoles">mié</button>
+    <button class="pill" data-filter="dia" data-val="jueves">jue</button>
+    <button class="pill" data-filter="dia" data-val="viernes">vie</button>
+    <button class="pill" data-filter="dia" data-val="sabado">sáb</button>
+    <button class="pill" data-filter="dia" data-val="domingo">dom</button>
+  </div>
+  <div class="search-wrap">
+    <input type="text" id="search" placeholder="buscar entidad, banco, promo...">
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stat">
+    <span class="stat-num" id="stat-total">—</span>
+    <span class="stat-label">promos activas</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num" id="stat-visible">—</span>
+    <span class="stat-label">mostrando</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num" id="stat-max-desc">—</span>
+    <span class="stat-label">máx descuento</span>
+  </div>
+</div>
+
+<div id="loading">cargando descuentos...</div>
+<div id="grid"></div>
+<div id="empty">ninguna promo coincide con los filtros seleccionados.</div>
+
+<script>
+const DIAS_ES = {
+  lunes:'lun', martes:'mar', miercoles:'mié', jueves:'jue',
+  viernes:'vie', sabado:'sáb', domingo:'dom'
+};
+const HOY_MAP = ['domingo','lunes','martes','miercoles','jueves','viernes','sabado'];
+const HOY = HOY_MAP[new Date().getDay()];
+
+let todosLosPromos = [];
+let filtros = { cat: 'todos', dia: 'todos', texto: '' };
+
+function scoreColor(s) {
+  if (s >= 7) return 'var(--score-high)';
+  if (s >= 4) return 'var(--score-mid)';
+  return 'var(--score-low)';
+}
+
+function renderDias(dias) {
+  if (!dias || dias.includes('todos')) {
+    return '<span class="dia-pill">todos los días</span>';
+  }
+  return dias.map(d => {
+    const esHoy = d.toLowerCase() === HOY;
+    return `<span class="dia-pill${esHoy ? ' hoy' : ''}">${DIAS_ES[d.toLowerCase()] || d}</span>`;
+  }).join('');
+}
+
+function formatPeso(n) {
+  if (!n) return null;
+  return '$' + n.toLocaleString('es-AR');
+}
+
+function buildCard(p) {
+  const badges = [];
+  if (p.descuento_pct) badges.push(`<span class="badge badge-descuento">${p.descuento_pct}% OFF</span>`);
+  if (p.reintegro_pct) badges.push(`<span class="badge badge-reintegro">${p.reintegro_pct}% reintegro</span>`);
+  if (p.cuotas_sin_interes) badges.push(`<span class="badge badge-cuotas">${p.cuotas_sin_interes} csi</span>`);
+  if (p.tope_ars) badges.push(`<span class="badge badge-tope">tope ${formatPeso(p.tope_ars)}</span>`);
+
+  const score = p.score_conveniencia || 0;
+  const dots = Array.from({length:10}, (_,i) =>
+    `<div class="score-dot" style="background:${i<score ? scoreColor(score) : 'var(--border)'}"></div>`
+  ).join('');
+
+  const medios = (p.medio_pago || []).join(' · ') || '—';
+  const vigencia = p.vigencia_hasta
+    ? `hasta ${p.vigencia_hasta}`
+    : 'sin fecha fin';
+
+  return `
+  <div class="card">
+    <div class="card-top">
+      <div class="card-entidad">${p.entidad}</div>
+      <div class="card-tipo">${p.tipo_entidad || ''}</div>
+    </div>
+    <div class="card-desc">${p.descripcion}</div>
+    ${badges.length ? `<div class="card-badges">${badges.join('')}</div>` : ''}
+    <div class="card-medios">${medios}</div>
+    <div class="dias-pills">${renderDias(p.dias_semana)}</div>
+    ${p.como_obtener ? `<div class="card-como">${p.como_obtener}</div>` : ''}
+    <div class="card-footer">
+      <div>
+        <div class="card-vigencia">${vigencia}</div>
+        <a class="card-link" href="${p.url_origen || '#'}" target="_blank" rel="noopener">ver en sitio →</a>
+      </div>
+      <div class="score-bar">
+        <div class="score-dots">${dots}</div>
+        <span class="score-num" style="color:${scoreColor(score)}">${score}/10</span>
+      </div>
+    </div>
+  </div>`;
+}
+
+function aplicarFiltros() {
+  const { cat, dia, texto } = filtros;
+  const q = texto.toLowerCase();
+
+  const visibles = todosLosPromos.filter(p => {
+    if (cat !== 'todos' && p.categoria !== cat) return false;
+    if (dia !== 'todos') {
+      const dias = (p.dias_semana || ['todos']).map(d => d.toLowerCase());
+      if (!dias.includes('todos') && !dias.includes(dia)) return false;
+    }
+    if (q) {
+      const haystack = [p.entidad, p.descripcion, p.categoria, ...(p.medio_pago||[])].join(' ').toLowerCase();
+      if (!haystack.includes(q)) return false;
+    }
+    return true;
+  });
+
+  const grid = document.getElementById('grid');
+  const empty = document.getElementById('empty');
+  grid.innerHTML = visibles.map(buildCard).join('');
+  empty.style.display = visibles.length ? 'none' : 'block';
+
+  document.getElementById('stat-visible').textContent = visibles.length;
+  const maxDesc = Math.max(0, ...visibles.map(p => p.descuento_pct || p.reintegro_pct || 0));
+  document.getElementById('stat-max-desc').textContent = maxDesc ? maxDesc + '%' : '—';
+}
+
+function init(data) {
+  document.getElementById('loading').style.display = 'none';
+  todosLosPromos = data.promos || [];
+  document.getElementById('stat-total').textContent = todosLosPromos.length;
+  document.getElementById('update-date').textContent =
+    new Date(data.generado_en).toLocaleDateString('es-AR', {weekday:'long', day:'numeric', month:'long', hour:'2-digit', minute:'2-digit'});
+
+  aplicarFiltros();
+
+  // Filtros por pills
+  document.querySelectorAll('.pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tipo = btn.dataset.filter;
+      document.querySelectorAll(`.pill[data-filter="${tipo}"]`).forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filtros[tipo] = btn.dataset.val;
+      aplicarFiltros();
+    });
+  });
+
+  // Búsqueda
+  document.getElementById('search').addEventListener('input', e => {
+    filtros.texto = e.target.value;
+    aplicarFiltros();
+  });
+}
+
+// Cargar datos — en dev podés pasar un JSON local; en prod viene de GitHub Pages
+fetch('./data/descuentos.json')
+  .then(r => r.json())
+  .then(init)
+  .catch(() => {
+    // Fallback con datos de demo para previsualizar el dashboard
+    init({
+      generado_en: new Date().toISOString(),
+      promos: [
+        {
+          entidad: "Banco Galicia", tipo_entidad: "banco", categoria: "supermercado",
+          descripcion: "30% de descuento en Coto los martes y jueves",
+          descuento_pct: 30, tope_ars: 5000, cuotas_sin_interes: null, reintegro_pct: null,
+          medio_pago: ["Tarjeta Galicia Visa", "Tarjeta Galicia Mastercard"],
+          dias_semana: ["martes","jueves"], vigencia_hasta: "2025-12-31",
+          como_obtener: "Pagá con tu tarjeta Galicia al momento de la compra. No requiere activación previa.",
+          url_origen: "https://www.bancogalicia.com/personas/tarjetas/beneficios.html",
+          fuente_id: "galicia", score_conveniencia: 8
+        },
+        {
+          entidad: "Naranja X", tipo_entidad: "fintech", categoria: "gastronomia",
+          descripcion: "25% reintegro en Rappi, PedidosYa y Uber Eats",
+          descuento_pct: null, tope_ars: 3000, cuotas_sin_interes: null, reintegro_pct: 25,
+          medio_pago: ["Tarjeta Naranja X Visa"],
+          dias_semana: ["todos"], vigencia_hasta: null,
+          como_obtener: "Seleccioná Naranja X como medio de pago en la app de delivery. El reintegro se acredita en 72hs hábiles.",
+          url_origen: "https://www.naranjax.com/beneficios",
+          fuente_id: "naranja", score_conveniencia: 7
+        },
+        {
+          entidad: "Shell Box", tipo_entidad: "combustible", categoria: "combustible",
+          descripcion: "20% de descuento en combustible los domingos",
+          descuento_pct: 20, tope_ars: 8000, cuotas_sin_interes: null, reintegro_pct: null,
+          medio_pago: ["Santander Visa", "Santander Mastercard"],
+          dias_semana: ["domingo"], vigencia_hasta: "2025-03-31",
+          como_obtener: "Descargá Shell Box, vinculá tu tarjeta Santander y escaneá el QR en la estación.",
+          url_origen: "https://www.shell.com.ar/motoristas/shell-box/beneficios.html",
+          fuente_id: "shell", score_conveniencia: 9
+        },
+        {
+          entidad: "Modo", tipo_entidad: "app_pago", categoria: "farmacia",
+          descripcion: "15% reintegro en farmacias adheridas",
+          descuento_pct: null, tope_ars: 2000, cuotas_sin_interes: null, reintegro_pct: 15,
+          medio_pago: ["Modo (cualquier banco adherido)"],
+          dias_semana: ["lunes","miercoles","viernes"], vigencia_hasta: null,
+          como_obtener: "Abrí Modo, elegí la farmacia adherida y pagá con QR. El reintegro llega a tu cuenta en 5 días hábiles.",
+          url_origen: "https://www.modo.com.ar/beneficios",
+          fuente_id: "modo", score_conveniencia: 6
+        },
+        {
+          entidad: "Banco Nación", tipo_entidad: "banco", categoria: "combustible",
+          descripcion: "12 cuotas sin interés en YPF Serviclub",
+          descuento_pct: null, tope_ars: null, cuotas_sin_interes: 12, reintegro_pct: null,
+          medio_pago: ["BNA Visa","BNA Mastercard"],
+          dias_semana: ["todos"], vigencia_hasta: "2025-06-30",
+          como_obtener: "Pagá el servicio con tu tarjeta BNA al retirar el auto. Indicá al cajero que querés cuotas.",
+          url_origen: "https://www.bna.com.ar/Personas/Beneficios",
+          fuente_id: "nacion", score_conveniencia: 5
+        }
+      ]
+    });
+  });
+</script>
+</body>
+</html>
