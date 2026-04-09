@@ -1,10 +1,429 @@
 {
-  "generado_en": "2026-04-08T23:57:50.001953",
-  "total_promos": 0,
-  "por_categoria": {},
-  "fuentes": {
-    "oficiales": 0,
-    "sociales": 0
+  "generado_en": "2026-04-09T00:17:45.844371",
+  "periodo": "April 2026",
+  "total_promos": 18,
+  "por_categoria": {
+    "supermercado": 8,
+    "combustible": 3,
+    "gastronomia": 2,
+    "entretenimiento": 2,
+    "farmacia": 1,
+    "indumentaria": 1,
+    "otro": 1
   },
-  "promos": []
+  "fuentes": {
+    "web_search_nuevas": 22,
+    "semilla_preservada": 0
+  },
+  "promos": [
+    {
+      "entidad": "Banco Santander",
+      "tipo_entidad": "banco",
+      "categoria": "supermercado",
+      "descripcion": "30% reintegro en COTO todos los lunes pagando con MODO/Santander Visa",
+      "descuento_pct": null,
+      "reintegro_pct": 30,
+      "cuotas_sin_interes": null,
+      "tope_ars": 15000,
+      "medio_pago": [
+        "Santander Visa Crédito",
+        "Santander Visa Débito",
+        "MODO"
+      ],
+      "dias_semana": [
+        "lunes"
+      ],
+      "vigencia_hasta": null,
+      "como_obtener": "Pagá en COTO con tarjeta Visa Santander a través de App Santander o MODO. Reintegro en 72hs en tu cuenta asociada.",
+      "url_origen": "https://descuentazo.com.ar/bancos/santander-4",
+      "score_conveniencia": 8,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Banco Galicia",
+      "tipo_entidad": "banco",
+      "categoria": "supermercado",
+      "descripcion": "35% descuento en ChagnoMás pagando con QR MODO/App Galicia Mastercard",
+      "descuento_pct": 35,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": null,
+      "tope_ars": 25000,
+      "medio_pago": [
+        "Galicia Mastercard Crédito",
+        "MODO",
+        "App Galicia"
+      ],
+      "dias_semana": [
+        "todos"
+      ],
+      "vigencia_hasta": null,
+      "como_obtener": "Pagá con QR escaneando desde la App Galicia o MODO con tu Mastercard Galicia contactless en ChagnoMás. Reintegro en 10 días hábiles.",
+      "url_origen": "https://www.cronista.com/informacion-gral/banco-galicia-sumo-un-beneficio-en-estos-supermercados-y-te-devuelve-20000-en-la-compra/",
+      "score_conveniencia": 8,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Múltiples bancos (MODO)",
+      "tipo_entidad": "app_pago",
+      "categoria": "supermercado",
+      "descripcion": "25% reintegro en Supermercados DÍA los viernes pagando con MODO",
+      "descuento_pct": null,
+      "reintegro_pct": 25,
+      "cuotas_sin_interes": null,
+      "tope_ars": 10000,
+      "medio_pago": [
+        "MODO",
+        "Visa",
+        "Mastercard",
+        "Prepaga"
+      ],
+      "dias_semana": [
+        "viernes"
+      ],
+      "vigencia_hasta": null,
+      "como_obtener": "Pagá en tiendas DÍA con cualquier tarjeta de crédito, débito o prepaga de bancos adheridos (Galicia, Santander-solo Visa, BBVA, Macro, Nación, etc.) a través de la app MODO. Tope $10.000 por banco por semana.",
+      "url_origen": "https://descuentazo.com.ar/tiendas/supermercados-dia-91",
+      "score_conveniencia": 8,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Banco Hipotecario",
+      "tipo_entidad": "banco",
+      "categoria": "supermercado",
+      "descripcion": "25% reintegro los martes en Cooperativa Obrera, tope variable por segmento",
+      "descuento_pct": null,
+      "reintegro_pct": 25,
+      "cuotas_sin_interes": null,
+      "tope_ars": 30000,
+      "medio_pago": [
+        "Visa débito Hipotecario",
+        "MODO Hipotecario"
+      ],
+      "dias_semana": [
+        "martes"
+      ],
+      "vigencia_hasta": null,
+      "como_obtener": "Pagar en 1 pago con Visa débito en app Banco Hipotecario o MODO en Cooperativa Obrera los martes (tope $10.000 cartera general / $30.000 Buho Sueldo/Jubilados/One)",
+      "url_origen": "https://www.cooperativaobrera.coop/financiacion-y-promos-bancarias/banco-hipotecario.html",
+      "score_conveniencia": 8,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Banco Comafi",
+      "tipo_entidad": "banco",
+      "categoria": "combustible",
+      "descripcion": "20% descuento en Shell/YPF los sábados con tope $40.000/mes",
+      "descuento_pct": 20,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": null,
+      "tope_ars": 40000,
+      "medio_pago": [
+        "Visa Comafi",
+        "Mastercard Comafi"
+      ],
+      "dias_semana": [
+        "sabado"
+      ],
+      "vigencia_hasta": "2026-04-30",
+      "como_obtener": "Cargar combustible en estaciones Shell o YPF los sábados con tarjeta Banco Comafi",
+      "url_origen": "https://www.diariohuarpe.com/nota/como-conseguir-descuentos-de-hasta-el-30-y-reintegros-de-40-000-en-nafta-2026469150",
+      "score_conveniencia": 8,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Banco Santander",
+      "tipo_entidad": "banco",
+      "categoria": "supermercado",
+      "descripcion": "25% reintegro en Supermercados DÍA los sábados con Santander Visa MODO",
+      "descuento_pct": null,
+      "reintegro_pct": 25,
+      "cuotas_sin_interes": null,
+      "tope_ars": 20000,
+      "medio_pago": [
+        "Santander Visa Crédito",
+        "Santander Visa Débito",
+        "MODO"
+      ],
+      "dias_semana": [
+        "sábado"
+      ],
+      "vigencia_hasta": null,
+      "como_obtener": "Pagá en tiendas DÍA con tu Visa Santander a través de App Santander o MODO. No aplica a CA gratuitas. Reintegro en 30 días.",
+      "url_origen": "https://descuentazo.com.ar/bancos/santander-4",
+      "score_conveniencia": 7,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Banco Galicia",
+      "tipo_entidad": "banco",
+      "categoria": "supermercado",
+      "descripcion": "30% reintegro en Coto Digital los jueves con tarjeta Amex Eminent Galicia",
+      "descuento_pct": null,
+      "reintegro_pct": 30,
+      "cuotas_sin_interes": null,
+      "tope_ars": null,
+      "medio_pago": [
+        "Galicia American Express Eminent"
+      ],
+      "dias_semana": [
+        "jueves"
+      ],
+      "vigencia_hasta": null,
+      "como_obtener": "Comprá en cotocorital.com.ar en un pago con tu tarjeta Amex Eminent Galicia los jueves. 25% para cartera general.",
+      "url_origen": "https://descuentazo.com.ar/bancos/galicia-2",
+      "score_conveniencia": 7,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Banco Galicia",
+      "tipo_entidad": "banco",
+      "categoria": "gastronomia",
+      "descripcion": "25% reintegro en Arredo los jueves con Galicia+MODO, 12 CSI Eminent",
+      "descuento_pct": null,
+      "reintegro_pct": 25,
+      "cuotas_sin_interes": 12,
+      "tope_ars": 30000,
+      "medio_pago": [
+        "Galicia Visa",
+        "Galicia Mastercard",
+        "Galicia Amex",
+        "MODO"
+      ],
+      "dias_semana": [
+        "jueves"
+      ],
+      "vigencia_hasta": null,
+      "como_obtener": "Escaneá el QR de MODO desde la App Galicia o MODO en Arredo los jueves. Tope $30.000 general / $60.000 Eminent.",
+      "url_origen": "https://descuentazo.com.ar/bancos/galicia-2",
+      "score_conveniencia": 7,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "BBVA",
+      "tipo_entidad": "banco",
+      "categoria": "supermercado",
+      "descripcion": "25% reintegro en Jumbo/Disco/Vea los martes con Mastercard BBVA contactless",
+      "descuento_pct": null,
+      "reintegro_pct": 25,
+      "cuotas_sin_interes": null,
+      "tope_ars": 8000,
+      "medio_pago": [
+        "BBVA Mastercard Crédito",
+        "App BBVA",
+        "MODO",
+        "Google Pay",
+        "Apple Pay"
+      ],
+      "dias_semana": [
+        "martes"
+      ],
+      "vigencia_hasta": null,
+      "como_obtener": "Pagá en Jumbo, Disco o Vea los martes con Mastercard BBVA contactless vía App BBVA, MODO, Google Pay o Apple Pay. No aplica Mercado Pago ni compras online. Tope $8.000/semana.",
+      "url_origen": "https://www.cronista.com/informacion-gral/el-bbva-se-la-juega-y-lanza-un-beneficio-en-supermercados-con-el-que-devuelve-64-000-en-la-compra/",
+      "score_conveniencia": 7,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "BBVA",
+      "tipo_entidad": "banco",
+      "categoria": "entretenimiento",
+      "descripcion": "30% descuento en Adventurama los martes con tarjeta crédito BBVA",
+      "descuento_pct": 30,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": null,
+      "tope_ars": null,
+      "medio_pago": [
+        "BBVA Visa Crédito",
+        "BBVA Mastercard Crédito"
+      ],
+      "dias_semana": [
+        "martes"
+      ],
+      "vigencia_hasta": "2026-06-30",
+      "como_obtener": "Presencial: pagá con tarjeta de crédito BBVA en el local vía Openpay. Online: seleccioná 'Openpay' al pagar en la tienda online de Adventurama. Vigente desde 01/04/2026 hasta 30/06/2026.",
+      "url_origen": "https://adventurama.com.ar/promo-bbva/",
+      "score_conveniencia": 7,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Banco Patagonia",
+      "tipo_entidad": "banco",
+      "categoria": "combustible",
+      "descripcion": "25% de descuento en combustible YPF, Shell, Axion y Puma los jueves",
+      "descuento_pct": 25,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": null,
+      "tope_ars": null,
+      "medio_pago": [
+        "Visa débito Patagonia",
+        "Mastercard Patagonia"
+      ],
+      "dias_semana": [
+        "jueves"
+      ],
+      "vigencia_hasta": "2026-04-30",
+      "como_obtener": "Pagar en estaciones YPF, Shell, Axion o Puma con tarjeta Patagonia los jueves",
+      "url_origen": "https://derechadiario.com.ar/economia/descuentos-nafta-abril-2026-promociones-ypf-shell-axion-puma",
+      "score_conveniencia": 7,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Banco Galicia",
+      "tipo_entidad": "banco",
+      "categoria": "farmacia",
+      "descripcion": "20% reintegro en FarmaPlus online jueves, hasta 6 cuotas sin interés",
+      "descuento_pct": null,
+      "reintegro_pct": 20,
+      "cuotas_sin_interes": 6,
+      "tope_ars": 10000,
+      "medio_pago": [
+        "Galicia Visa Débito",
+        "Galicia Visa Crédito",
+        "Galicia Mastercard"
+      ],
+      "dias_semana": [
+        "jueves"
+      ],
+      "vigencia_hasta": null,
+      "como_obtener": "Comprá en FarmaPlus.com.ar los jueves con tarjeta Galicia. Tope $10.000 Eminent / $8.000 cartera general. Solo compras online.",
+      "url_origen": "https://descuentazo.com.ar/bancos/galicia-2",
+      "score_conveniencia": 6,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Banco Macro",
+      "tipo_entidad": "banco",
+      "categoria": "supermercado",
+      "descripcion": "20% reintegro en Supermercados DÍA los viernes con Macro Visa contactless",
+      "descuento_pct": null,
+      "reintegro_pct": 20,
+      "cuotas_sin_interes": null,
+      "tope_ars": 10000,
+      "medio_pago": [
+        "Macro Visa Débito",
+        "Macro Visa Crédito"
+      ],
+      "dias_semana": [
+        "viernes"
+      ],
+      "vigencia_hasta": null,
+      "como_obtener": "Pagá en locales adheridos de Supermercados DÍA los viernes con tarjeta Visa Macro de manera contactless. Tope $10.000 por cuenta por mes.",
+      "url_origen": "https://descuentazo.com.ar/tiendas/supermercados-dia-91",
+      "score_conveniencia": 6,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Banco Santander",
+      "tipo_entidad": "banco",
+      "categoria": "indumentaria",
+      "descripcion": "25% reintegro en OpenSports y Trip sábados y domingos con Santander Visa MODO",
+      "descuento_pct": null,
+      "reintegro_pct": 25,
+      "cuotas_sin_interes": null,
+      "tope_ars": null,
+      "medio_pago": [
+        "Santander Visa Crédito",
+        "Santander Visa Débito",
+        "MODO"
+      ],
+      "dias_semana": [
+        "sábado",
+        "domingo"
+      ],
+      "vigencia_hasta": null,
+      "como_obtener": "Pagá en OpenSports o Trip los fines de semana con Visa Santander vía App Santander o MODO. Reintegro en 30 días en tu cuenta bancaria asociada.",
+      "url_origen": "https://descuentazo.com.ar/bancos/santander-4",
+      "score_conveniencia": 6,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Banco Patagonia",
+      "tipo_entidad": "banco",
+      "categoria": "otro",
+      "descripcion": "Hasta 12 CSI en tienda Club Patagonia con tarjetas Visa/MC/Amex Patagonia",
+      "descuento_pct": null,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": 12,
+      "tope_ars": null,
+      "medio_pago": [
+        "Visa crédito Patagonia",
+        "Mastercard Patagonia",
+        "American Express Patagonia"
+      ],
+      "dias_semana": [
+        "todos"
+      ],
+      "vigencia_hasta": "2026-04-30",
+      "como_obtener": "Ingresar a clubpatagonia.com.ar y comprar con tarjeta de crédito Patagonia (clientes Clásica, Plus o Singular)",
+      "url_origen": "https://www.clubpatagonia.com.ar/",
+      "score_conveniencia": 6,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Banco Patagonia",
+      "tipo_entidad": "banco",
+      "categoria": "gastronomia",
+      "descripcion": "20% descuento en Havanna con Mastercard Patagonia, tope $10.000/mes",
+      "descuento_pct": 20,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": null,
+      "tope_ars": 10000,
+      "medio_pago": [
+        "Mastercard Patagonia"
+      ],
+      "dias_semana": [
+        "todos"
+      ],
+      "vigencia_hasta": null,
+      "como_obtener": "Pagar en 1 pago con Mastercard Patagonia en comercios Havanna adheridos",
+      "url_origen": "https://www.bancopatagonia.com.ar/patagoniaon/beneficios.php",
+      "score_conveniencia": 6,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Banco Hipotecario",
+      "tipo_entidad": "banco",
+      "categoria": "combustible",
+      "descripcion": "15% de descuento en combustible YPF/Shell los martes",
+      "descuento_pct": 15,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": null,
+      "tope_ars": null,
+      "medio_pago": [
+        "Visa Hipotecario",
+        "Mastercard Hipotecario"
+      ],
+      "dias_semana": [
+        "martes"
+      ],
+      "vigencia_hasta": "2026-04-30",
+      "como_obtener": "Cargar combustible en estaciones YPF o Shell los martes pagando con tarjeta Banco Hipotecario",
+      "url_origen": "https://derechadiario.com.ar/economia/descuentos-nafta-abril-2026-promociones-ypf-shell-axion-puma",
+      "score_conveniencia": 6,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Banco Patagonia",
+      "tipo_entidad": "banco",
+      "categoria": "entretenimiento",
+      "descripcion": "10% descuento + hasta 3 CSI en Cúspide librerías todos los días",
+      "descuento_pct": 10,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": 3,
+      "tope_ars": 5000,
+      "medio_pago": [
+        "Visa crédito Patagonia",
+        "Mastercard Patagonia",
+        "débito Patagonia"
+      ],
+      "dias_semana": [
+        "todos"
+      ],
+      "vigencia_hasta": "2026-04-30",
+      "como_obtener": "Abonar en sucursales Cúspide o cuspide.com con cualquier tarjeta de crédito o débito Banco Patagonia",
+      "url_origen": "https://cuspide.com/promociones-bancarias/",
+      "score_conveniencia": 5,
+      "fuente_tipo": "web_search"
+    }
+  ]
 }
