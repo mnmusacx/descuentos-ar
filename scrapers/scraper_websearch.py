@@ -19,14 +19,10 @@ import anthropic
 MES_ANIO = datetime.now().strftime("%B %Y")  # ej: "abril 2026"
 
 QUERIES = [
-    f"descuentos supermercados bancos Argentina {MES_ANIO} Galicia Santander BBVA Macro",
-    f"Banco Nación BNA descuentos {MES_ANIO} supermercado combustible farmacia MODO",
-    f"Banco Patagonia Hipotecario Comafi descuentos {MES_ANIO} supermercados",
-    f"Cuenta DNI Banco Provincia descuentos {MES_ANIO} supermercados gastronomía",
-    f"Naranja X Personal Pay Mercado Pago descuentos {MES_ANIO} reintegro",
-    f"descuentos combustible YPF Shell Axion bancos Argentina {MES_ANIO}",
-    f"descuentos farmacias bancos Argentina {MES_ANIO} reintegro cuotas",
-    f"cuotas sin interés electrónica indumentaria bancos Argentina {MES_ANIO}",
+    f"descuentos supermercados bancos Argentina {MES_ANIO} Galicia Santander BBVA Macro Nación Patagonia MODO",
+    f"descuentos combustible farmacia gastronomía bancos Argentina {MES_ANIO} reintegro cuotas sin interés",
+    f"Cuenta DNI Naranja X Personal Pay Mercado Pago descuentos {MES_ANIO} reintegro supermercados",
+    f"cuotas sin interés electrónica indumentaria viajes bancos Argentina {MES_ANIO} Comafi Hipotecario",
 ]
 
 # ─── Prompt para extracción estructurada ──────────────────────────────────────
