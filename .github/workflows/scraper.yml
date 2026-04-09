@@ -2,14 +2,12 @@ name: Scraper semanal de descuentos AR
 
 on:
   schedule:
-    # Todos los lunes a las 7:00 AM Argentina (UTC-3) = 10:00 UTC
     - cron: '0 10 * * 1'
   workflow_dispatch:
-    # Permite correrlo manualmente desde la UI de GitHub
 
 permissions:
-  contents: write   # Para hacer push del JSON actualizado
-  pages: write      # Para deploy a GitHub Pages
+  contents: write
+  pages: write
   id-token: write
 
 jobs:
@@ -28,14 +26,14 @@ jobs:
           cache: 'pip'
 
       - name: Instalar dependencias
-        run: pip install requests beautifulsoup4 anthropic
+        run: pip install anthropic
 
-      - name: Correr scraper completo (bancos + Telegram + RSS)
+      - name: Correr scraper con web search
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           cd scrapers
-          python main.py
+          python scraper_websearch.py
 
       - name: Verificar output
         run: |
@@ -43,9 +41,11 @@ jobs:
           import json
           with open('data/descuentos.json') as f:
               d = json.load(f)
+          print(f'Período: {d.get(\"periodo\", \"?\")}')
           print(f'Total promos: {d[\"total_promos\"]}')
-          print(f'Oficiales: {d[\"fuentes\"][\"oficiales\"]}  Social: {d[\"fuentes\"][\"sociales\"]}')
-          print(f'Categorias: {d[\"por_categoria\"]}')
+          print(f'Web search nuevas: {d[\"fuentes\"][\"web_search_nuevas\"]}')
+          print(f'De semilla: {d[\"fuentes\"][\"semilla_preservada\"]}')
+          print(f'Por categoría: {d[\"por_categoria\"]}')
           for p in d['promos'][:5]:
               score = p.get('score_conveniencia', 0)
               print(f'  [{score}/10] {p[\"entidad\"]}: {p[\"descripcion\"][:55]}')
