@@ -1,21 +1,114 @@
 {
-  "generado_en": "2026-04-09T00:17:45.844371",
+  "generado_en": "2026-04-15T10:59:54.984253",
   "periodo": "April 2026",
-  "total_promos": 18,
+  "total_promos": 29,
   "por_categoria": {
-    "supermercado": 8,
+    "electronica": 3,
+    "supermercado": 12,
+    "viajes": 2,
     "combustible": 3,
+    "indumentaria": 3,
     "gastronomia": 2,
     "entretenimiento": 2,
     "farmacia": 1,
-    "indumentaria": 1,
     "otro": 1
   },
   "fuentes": {
-    "web_search_nuevas": 22,
-    "semilla_preservada": 0
+    "web_search_nuevas": 11,
+    "semilla_preservada": 18
   },
   "promos": [
+    {
+      "entidad": "Banco Nación",
+      "tipo_entidad": "banco",
+      "categoria": "electronica",
+      "descripcion": "Hasta 20 CSI en tecnología, electro y motos - vigente a mayo 2026",
+      "descuento_pct": null,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": 20,
+      "tope_ars": null,
+      "medio_pago": [
+        "Visa Crédito BNA",
+        "Mastercard Crédito BNA"
+      ],
+      "dias_semana": [
+        "todos"
+      ],
+      "vigencia_hasta": "2026-05-31",
+      "como_obtener": "Abonar con tarjeta de crédito BNA en comercios adheridos de tecnología, electrodomésticos, materiales para el hogar y motos",
+      "url_origen": "https://elintransigente.com/2026/04/banco-nacion-lanza-20-cuotas-sin-interes-para-reactivar-el-consumo-tras-la-caida-de-ventas/",
+      "score_conveniencia": 9,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Banco Comafi",
+      "tipo_entidad": "banco",
+      "categoria": "electronica",
+      "descripcion": "12 CSI los viernes, sábados y domingos de abril en Electro",
+      "descuento_pct": null,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": 12,
+      "tope_ars": null,
+      "medio_pago": [
+        "Visa Crédito Comafi",
+        "Mastercard Crédito Comafi"
+      ],
+      "dias_semana": [
+        "viernes",
+        "sábado",
+        "domingo"
+      ],
+      "vigencia_hasta": "2026-04-30",
+      "como_obtener": "Abonar con tarjeta de crédito Visa o Mastercard Comafi en comercios de electro adheridos los viernes, sábados y domingos de abril",
+      "url_origen": "https://www.elobservador.com.uy/argentina/economia-y-negocios/descuentos-supermercados-abril-2026-n6039676",
+      "score_conveniencia": 8,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Banco Comafi",
+      "tipo_entidad": "banco",
+      "categoria": "supermercado",
+      "descripcion": "3-6-9-12 CSI sábados y domingos en COTO (segmento Único)",
+      "descuento_pct": null,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": 12,
+      "tope_ars": null,
+      "medio_pago": [
+        "Visa Crédito Comafi Único",
+        "Mastercard Crédito Comafi Único"
+      ],
+      "dias_semana": [
+        "sábado",
+        "domingo"
+      ],
+      "vigencia_hasta": "2026-04-30",
+      "como_obtener": "Pagar con tarjeta de crédito Visa o Mastercard Comafi segmento Único en COTO o COTO Digital los sábados y domingos de abril",
+      "url_origen": "https://www.coto.com.ar/legales/",
+      "score_conveniencia": 8,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Banco Nación",
+      "tipo_entidad": "banco",
+      "categoria": "viajes",
+      "descripcion": "Hasta 12 CSI en turismo nacional - promo Viajá+ abril 2026",
+      "descuento_pct": null,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": 12,
+      "tope_ars": null,
+      "medio_pago": [
+        "Visa Crédito BNA",
+        "Mastercard Crédito BNA"
+      ],
+      "dias_semana": [
+        "todos"
+      ],
+      "vigencia_hasta": "2026-04-30",
+      "como_obtener": "Ingresar a Tienda BNA+ sección viajes y abonar con tarjeta de crédito Visa o Mastercard BNA en prestadores adheridos",
+      "url_origen": "https://www.infozona.com.ar/viaja-por-el-pais-con-banco-nacion-como-acceder-a-las-12-cuotas-sin-interes-y-reintegros/",
+      "score_conveniencia": 8,
+      "fuente_tipo": "web_search"
+    },
     {
       "entidad": "Banco Santander",
       "tipo_entidad": "banco",
@@ -128,6 +221,70 @@
       "como_obtener": "Cargar combustible en estaciones Shell o YPF los sábados con tarjeta Banco Comafi",
       "url_origen": "https://www.diariohuarpe.com/nota/como-conseguir-descuentos-de-hasta-el-30-y-reintegros-de-40-000-en-nafta-2026469150",
       "score_conveniencia": 8,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Banco Comafi",
+      "tipo_entidad": "banco",
+      "categoria": "indumentaria",
+      "descripcion": "6 CSI + 5% descuento en Rex (indumentaria) hasta 30/04/2026",
+      "descuento_pct": 5,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": 6,
+      "tope_ars": null,
+      "medio_pago": [
+        "Visa Crédito Comafi",
+        "Mastercard Crédito Comafi"
+      ],
+      "dias_semana": [
+        "todos"
+      ],
+      "vigencia_hasta": "2026-04-30",
+      "como_obtener": "Abonar con tarjeta de crédito Visa o Mastercard Comafi en locales Rex adheridos (válido desde 01/02/2026 hasta 30/04/2026)",
+      "url_origen": "https://somosrex.com/promociones",
+      "score_conveniencia": 7,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Banco Hipotecario",
+      "tipo_entidad": "banco",
+      "categoria": "electronica",
+      "descripcion": "6 y 9 CSI en productos seleccionados en Coppel (01/04-30/05/2026)",
+      "descuento_pct": null,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": 9,
+      "tope_ars": null,
+      "medio_pago": [
+        "Visa Crédito Hipotecario"
+      ],
+      "dias_semana": [
+        "todos"
+      ],
+      "vigencia_hasta": "2026-05-30",
+      "como_obtener": "Abonar con tarjeta de crédito Visa Hipotecario en tiendas presenciales y online de Coppel (www.coppel.com.ar)",
+      "url_origen": "https://www.coppel.com.ar/promociones-bancarias",
+      "score_conveniencia": 7,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Mercado Pago",
+      "tipo_entidad": "fintech",
+      "categoria": "indumentaria",
+      "descripcion": "Festival de Cuotas: hasta 24 CSI en +300 marcas (6-12 abril)",
+      "descuento_pct": null,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": 24,
+      "tope_ars": null,
+      "medio_pago": [
+        "Mercado Pago"
+      ],
+      "dias_semana": [
+        "todos"
+      ],
+      "vigencia_hasta": "2026-04-12",
+      "como_obtener": "Pagar online o con QR de Mercado Pago en las marcas adheridas al Festival de Cuotas (indumentaria, electro, hogar, jugueterías, entre otros)",
+      "url_origen": "https://www.infobae.com/economia/2026/04/04/vuelven-las-12-cuotas-sin-interes-al-sector-de-electrodomesticos-se-suman-las-marcas-de-ropa/",
+      "score_conveniencia": 7,
       "fuente_tipo": "web_search"
     },
     {
@@ -268,6 +425,51 @@
       "fuente_tipo": "web_search"
     },
     {
+      "entidad": "Banco Comafi",
+      "tipo_entidad": "banco",
+      "categoria": "supermercado",
+      "descripcion": "3-6 CSI sábados y domingos de abril en COTO (cartera general)",
+      "descuento_pct": null,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": 6,
+      "tope_ars": null,
+      "medio_pago": [
+        "Visa Crédito Comafi",
+        "Mastercard Crédito Comafi"
+      ],
+      "dias_semana": [
+        "sábado",
+        "domingo"
+      ],
+      "vigencia_hasta": "2026-04-30",
+      "como_obtener": "Pagar con tarjeta de crédito Visa o Mastercard Comafi en sucursales COTO o COTO Digital los sábados y domingos de abril",
+      "url_origen": "https://www.coto.com.ar/legales/",
+      "score_conveniencia": 6,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Banco Nación",
+      "tipo_entidad": "banco",
+      "categoria": "viajes",
+      "descripcion": "3 CSI en vuelos nacionales Aerolíneas Argentinas con BNA",
+      "descuento_pct": null,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": 3,
+      "tope_ars": null,
+      "medio_pago": [
+        "Visa Crédito BNA",
+        "Mastercard Crédito BNA"
+      ],
+      "dias_semana": [
+        "todos"
+      ],
+      "vigencia_hasta": "2026-04-30",
+      "como_obtener": "Comprar pasajes en Aerolíneas Argentinas abonando con tarjeta de crédito Visa o Mastercard BNA durante abril 2026",
+      "url_origen": "https://www.infozona.com.ar/viaja-por-argentina-con-banco-nacion-como-acceder-a-cuotas-sin-interes-y-reintegros-en-turismo/",
+      "score_conveniencia": 6,
+      "fuente_tipo": "web_search"
+    },
+    {
       "entidad": "Banco Galicia",
       "tipo_entidad": "banco",
       "categoria": "farmacia",
@@ -400,6 +602,49 @@
       "como_obtener": "Cargar combustible en estaciones YPF o Shell los martes pagando con tarjeta Banco Hipotecario",
       "url_origen": "https://derechadiario.com.ar/economia/descuentos-nafta-abril-2026-promociones-ypf-shell-axion-puma",
       "score_conveniencia": 6,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Banco Comafi",
+      "tipo_entidad": "banco",
+      "categoria": "supermercado",
+      "descripcion": "25% de descuento todos los jueves de abril en supermercados",
+      "descuento_pct": 25,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": null,
+      "tope_ars": 18000,
+      "medio_pago": [
+        "Visa Débito Comafi (Cartera Selecta)"
+      ],
+      "dias_semana": [
+        "jueves"
+      ],
+      "vigencia_hasta": "2026-04-30",
+      "como_obtener": "Pagar con tarjeta Visa Débito Comafi Cartera Selecta en supermercados adheridos los jueves de abril",
+      "url_origen": "https://www.elobservador.com.uy/argentina/economia-y-negocios/descuentos-supermercados-abril-2026-n6039676",
+      "score_conveniencia": 5,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Banco Hipotecario",
+      "tipo_entidad": "banco",
+      "categoria": "supermercado",
+      "descripcion": "25% de descuento todos los martes de abril en supermercados",
+      "descuento_pct": 25,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": null,
+      "tope_ars": 15000,
+      "medio_pago": [
+        "MODO",
+        "Visa Débito Hipotecario"
+      ],
+      "dias_semana": [
+        "martes"
+      ],
+      "vigencia_hasta": "2026-04-30",
+      "como_obtener": "Pagar con MODO o Visa Débito Hipotecario en supermercados adheridos los martes de abril",
+      "url_origen": "https://www.elobservador.com.uy/argentina/economia-y-negocios/descuentos-supermercados-abril-2026-n6039676",
+      "score_conveniencia": 5,
       "fuente_tipo": "web_search"
     },
     {
