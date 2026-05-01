@@ -1,6 +1,6 @@
 {
-  "generado_en": "2026-04-15T10:59:54.984253",
-  "periodo": "April 2026",
+  "generado_en": "2026-05-01T11:07:33.656667",
+  "periodo": "May 2026",
   "total_promos": 29,
   "por_categoria": {
     "electronica": 3,
@@ -14,8 +14,8 @@
     "otro": 1
   },
   "fuentes": {
-    "web_search_nuevas": 11,
-    "semilla_preservada": 18
+    "web_search_nuevas": 0,
+    "semilla_preservada": 29
   },
   "promos": [
     {
