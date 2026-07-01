@@ -1,20 +1,21 @@
 {
-  "generado_en": "2026-06-15T15:45:17.652652",
-  "periodo": "June 2026",
-  "total_promos": 29,
+  "generado_en": "2026-07-01T12:34:48.581076",
+  "periodo": "July 2026",
+  "total_promos": 41,
   "por_categoria": {
     "electronica": 3,
-    "supermercado": 12,
+    "gastronomia": 3,
+    "supermercado": 14,
     "viajes": 2,
-    "combustible": 3,
+    "combustible": 4,
+    "otro": 5,
     "indumentaria": 3,
-    "gastronomia": 2,
-    "entretenimiento": 2,
-    "farmacia": 1,
-    "otro": 1
+    "entretenimiento": 3,
+    "farmacia": 2,
+    "servicios": 2
   },
   "fuentes": {
-    "web_search_nuevas": 0,
+    "web_search_nuevas": 13,
     "semilla_preservada": 29
   },
   "promos": [
@@ -38,6 +39,33 @@
       "como_obtener": "Abonar con tarjeta de crédito BNA en comercios adheridos de tecnología, electrodomésticos, materiales para el hogar y motos",
       "url_origen": "https://elintransigente.com/2026/04/banco-nacion-lanza-20-cuotas-sin-interes-para-reactivar-el-consumo-tras-la-caida-de-ventas/",
       "score_conveniencia": 9,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Cuenta DNI (Banco Provincia)",
+      "tipo_entidad": "app_pago",
+      "categoria": "gastronomia",
+      "descripcion": "25% descuento en gastronomía todos los días, tope $10.000/sem",
+      "descuento_pct": 25,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": null,
+      "tope_ars": 10000,
+      "medio_pago": [
+        "Cuenta DNI"
+      ],
+      "dias_semana": [
+        "lunes",
+        "martes",
+        "miércoles",
+        "jueves",
+        "viernes",
+        "sábado",
+        "domingo"
+      ],
+      "vigencia_hasta": "2026-07-31",
+      "como_obtener": "Pagar con la app Cuenta DNI en locales gastronómicos adheridos. Tope $10.000/semana, se alcanza con $40.000 en consumos.",
+      "url_origen": "https://www.iprofesional.com/finanzas/458780-cuenta-dni-aumenta-topes-descuento-suma-beneficios-especiales-vacaciones-invierno-julio-2026",
+      "score_conveniencia": 8,
       "fuente_tipo": "web_search"
     },
     {
@@ -221,6 +249,60 @@
       "como_obtener": "Cargar combustible en estaciones Shell o YPF los sábados con tarjeta Banco Comafi",
       "url_origen": "https://www.diariohuarpe.com/nota/como-conseguir-descuentos-de-hasta-el-30-y-reintegros-de-40-000-en-nafta-2026469150",
       "score_conveniencia": 8,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Cuenta DNI (Banco Provincia)",
+      "tipo_entidad": "app_pago",
+      "categoria": "supermercado",
+      "descripcion": "40% descuento en ferias y mercados bonaerenses todos los días",
+      "descuento_pct": 40,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": null,
+      "tope_ars": 6000,
+      "medio_pago": [
+        "Cuenta DNI"
+      ],
+      "dias_semana": [
+        "lunes",
+        "martes",
+        "miércoles",
+        "jueves",
+        "viernes",
+        "sábado",
+        "domingo"
+      ],
+      "vigencia_hasta": "2026-07-31",
+      "como_obtener": "Pagar con la app Cuenta DNI en ferias y mercados bonaerenses adheridos. Tope $6.000/semana, se alcanza con $15.000 en consumos.",
+      "url_origen": "https://www.25digital.com.ar/index.php/2026/06/30/banco-provincia-todos-los-descuentos-de-julio-2026-con-cuenta-dni/",
+      "score_conveniencia": 7,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Cuenta DNI (Banco Provincia)",
+      "tipo_entidad": "app_pago",
+      "categoria": "otro",
+      "descripcion": "40% descuento en garrafas todo el mes, tope $18.000 mensual",
+      "descuento_pct": 40,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": null,
+      "tope_ars": 18000,
+      "medio_pago": [
+        "Cuenta DNI"
+      ],
+      "dias_semana": [
+        "lunes",
+        "martes",
+        "miércoles",
+        "jueves",
+        "viernes",
+        "sábado",
+        "domingo"
+      ],
+      "vigencia_hasta": "2026-07-31",
+      "como_obtener": "Pagar con la app Cuenta DNI en bocas de expendio de garrafas adheridas. Tope $18.000/mes, se alcanza con $45.000 en consumos.",
+      "url_origen": "https://www.25digital.com.ar/index.php/2026/06/30/banco-provincia-todos-los-descuentos-de-julio-2026-con-cuenta-dni/",
+      "score_conveniencia": 7,
       "fuente_tipo": "web_search"
     },
     {
@@ -425,6 +507,85 @@
       "fuente_tipo": "web_search"
     },
     {
+      "entidad": "Cuenta DNI (Banco Provincia)",
+      "tipo_entidad": "app_pago",
+      "categoria": "otro",
+      "descripcion": "20% descuento en comercios de cercanía/carnicerías lun-vie",
+      "descuento_pct": 20,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": null,
+      "tope_ars": 6000,
+      "medio_pago": [
+        "Cuenta DNI"
+      ],
+      "dias_semana": [
+        "lunes",
+        "martes",
+        "miércoles",
+        "jueves",
+        "viernes"
+      ],
+      "vigencia_hasta": "2026-07-31",
+      "como_obtener": "Pagar con la app Cuenta DNI en comercios de cercanía adheridos. Tope $6.000/semana, se alcanza con $30.000 en consumos.",
+      "url_origen": "https://www.25digital.com.ar/index.php/2026/06/30/banco-provincia-todos-los-descuentos-de-julio-2026-con-cuenta-dni/",
+      "score_conveniencia": 6,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Cuenta DNI (Banco Provincia)",
+      "tipo_entidad": "app_pago",
+      "categoria": "entretenimiento",
+      "descripcion": "40% descuento en universidades, clubes y eventos todos los días",
+      "descuento_pct": 40,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": null,
+      "tope_ars": 6000,
+      "medio_pago": [
+        "Cuenta DNI"
+      ],
+      "dias_semana": [
+        "lunes",
+        "martes",
+        "miércoles",
+        "jueves",
+        "viernes",
+        "sábado",
+        "domingo"
+      ],
+      "vigencia_hasta": "2026-07-31",
+      "como_obtener": "Pagar con la app Cuenta DNI en universidades, clubes y entidades educativas adheridas. Tope $6.000/semana, se alcanza con $15.000 en consumos.",
+      "url_origen": "https://www.iprofesional.com/finanzas/458780-cuenta-dni-aumenta-topes-descuento-suma-beneficios-especiales-vacaciones-invierno-julio-2026",
+      "score_conveniencia": 6,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Cuenta DNI (Banco Provincia)",
+      "tipo_entidad": "app_pago",
+      "categoria": "otro",
+      "descripcion": "30% descuento en marcas destacadas todos los días, tope $15.000/mes",
+      "descuento_pct": 30,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": null,
+      "tope_ars": 15000,
+      "medio_pago": [
+        "Cuenta DNI"
+      ],
+      "dias_semana": [
+        "lunes",
+        "martes",
+        "miércoles",
+        "jueves",
+        "viernes",
+        "sábado",
+        "domingo"
+      ],
+      "vigencia_hasta": "2026-07-31",
+      "como_obtener": "Pagar con la app Cuenta DNI en marcas destacadas adheridas. Tope $15.000/mes, se alcanza con $50.000 en consumos.",
+      "url_origen": "https://www.25digital.com.ar/index.php/2026/06/30/banco-provincia-todos-los-descuentos-de-julio-2026-con-cuenta-dni/",
+      "score_conveniencia": 6,
+      "fuente_tipo": "web_search"
+    },
+    {
       "entidad": "Banco Comafi",
       "tipo_entidad": "banco",
       "categoria": "supermercado",
@@ -605,6 +766,81 @@
       "fuente_tipo": "web_search"
     },
     {
+      "entidad": "Cuenta DNI (Banco Provincia)",
+      "tipo_entidad": "app_pago",
+      "categoria": "supermercado",
+      "descripcion": "15% descuento en Supermercados Toledo los martes, sin tope",
+      "descuento_pct": 15,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": null,
+      "tope_ars": null,
+      "medio_pago": [
+        "Cuenta DNI"
+      ],
+      "dias_semana": [
+        "martes"
+      ],
+      "vigencia_hasta": "2026-07-31",
+      "como_obtener": "Pagar con la app Cuenta DNI en Supermercados Toledo los martes. Reintegro acreditado dentro de los 10 días hábiles.",
+      "url_origen": "https://www.eldestapeweb.com/sociedad/cuenta-dni-cambia-los-descuentos-para-las-vacaciones-de-invierno-2026630191011",
+      "score_conveniencia": 5,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Cuenta DNI (Banco Provincia)",
+      "tipo_entidad": "app_pago",
+      "categoria": "servicios",
+      "descripcion": "Hasta 3 cuotas sin interés con tarjeta crédito vinculada, vía NFC",
+      "descuento_pct": null,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": 3,
+      "tope_ars": null,
+      "medio_pago": [
+        "Tarjeta de crédito vinculada a Cuenta DNI (NFC/contactless)"
+      ],
+      "dias_semana": [
+        "lunes",
+        "martes",
+        "miércoles",
+        "jueves",
+        "viernes",
+        "sábado",
+        "domingo"
+      ],
+      "vigencia_hasta": "2026-07-31",
+      "como_obtener": "Pagar con la tarjeta de crédito vinculada a Cuenta DNI mediante tecnología contactless (NFC) en comercios adheridos. No aplica en rubro alimentos.",
+      "url_origen": "https://www.iprofesional.com/finanzas/458780-cuenta-dni-aumenta-topes-descuento-suma-beneficios-especiales-vacaciones-invierno-julio-2026",
+      "score_conveniencia": 5,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Personal Pay",
+      "tipo_entidad": "app_pago",
+      "categoria": "servicios",
+      "descripcion": "Hasta 15% reintegro en factura Personal vía Reintegro Plus",
+      "descuento_pct": null,
+      "reintegro_pct": 15,
+      "cuotas_sin_interes": null,
+      "tope_ars": null,
+      "medio_pago": [
+        "Personal Pay"
+      ],
+      "dias_semana": [
+        "lunes",
+        "martes",
+        "miércoles",
+        "jueves",
+        "viernes",
+        "sábado",
+        "domingo"
+      ],
+      "vigencia_hasta": null,
+      "como_obtener": "Activar Reintegro Plus en la app Personal Pay (disponible desde Nivel 2 en adelante). Pagar la factura Personal desde la billetera. El reintegro se acredita en la cuenta.",
+      "url_origen": "https://www.c5n.com/economia/oportunidad-descuento-este-es-el-reintegro-que-definio-una-billetera-virtual-el-pago-un-servicio-que-se-volvio-clave-n203378",
+      "score_conveniencia": 5,
+      "fuente_tipo": "web_search"
+    },
+    {
       "entidad": "Banco Comafi",
       "tipo_entidad": "banco",
       "categoria": "supermercado",
@@ -668,6 +904,72 @@
       "como_obtener": "Abonar en sucursales Cúspide o cuspide.com con cualquier tarjeta de crédito o débito Banco Patagonia",
       "url_origen": "https://cuspide.com/promociones-bancarias/",
       "score_conveniencia": 5,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Cuenta DNI (Banco Provincia)",
+      "tipo_entidad": "app_pago",
+      "categoria": "otro",
+      "descripcion": "10% descuento en librerías de texto lunes y martes, sin tope",
+      "descuento_pct": 10,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": null,
+      "tope_ars": null,
+      "medio_pago": [
+        "Cuenta DNI"
+      ],
+      "dias_semana": [
+        "lunes",
+        "martes"
+      ],
+      "vigencia_hasta": "2026-07-31",
+      "como_obtener": "Pagar con la app Cuenta DNI en librerías de texto adheridas. Sin tope de reintegro.",
+      "url_origen": "https://www.iprofesional.com/finanzas/458780-cuenta-dni-aumenta-topes-descuento-suma-beneficios-especiales-vacaciones-invierno-julio-2026",
+      "score_conveniencia": 4,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Cuenta DNI (Banco Provincia)",
+      "tipo_entidad": "app_pago",
+      "categoria": "farmacia",
+      "descripcion": "10% descuento en farmacias y perfumerías mié y jue, sin tope",
+      "descuento_pct": 10,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": null,
+      "tope_ars": null,
+      "medio_pago": [
+        "Cuenta DNI"
+      ],
+      "dias_semana": [
+        "miércoles",
+        "jueves"
+      ],
+      "vigencia_hasta": "2026-07-31",
+      "como_obtener": "Pagar con la app Cuenta DNI en farmacias y perfumerías adheridas los miércoles y jueves. Sin tope de reintegro.",
+      "url_origen": "https://www.iprofesional.com/finanzas/458780-cuenta-dni-aumenta-topes-descuento-suma-beneficios-especiales-vacaciones-invierno-julio-2026",
+      "score_conveniencia": 4,
+      "fuente_tipo": "web_search"
+    },
+    {
+      "entidad": "Naranja X",
+      "tipo_entidad": "fintech",
+      "categoria": "combustible",
+      "descripcion": "10% descuento en estaciones Gulf los sáb y dom hasta 26/07",
+      "descuento_pct": 10,
+      "reintegro_pct": null,
+      "cuotas_sin_interes": null,
+      "tope_ars": null,
+      "medio_pago": [
+        "Tarjeta Naranja X"
+      ],
+      "dias_semana": [
+        "sábado",
+        "domingo"
+      ],
+      "vigencia_hasta": "2026-07-26",
+      "como_obtener": "Pagar con tarjeta Naranja X en estaciones de servicio Gulf los sábados y domingos hasta el 26 de julio.",
+      "url_origen": "https://www.iproup.com/economia-digital/68733-naranja-x-lanzo-sus-promos-de-junio-50-en-subtes-y-descuentos-para-el-dia-del-padre",
+      "score_conveniencia": 4,
       "fuente_tipo": "web_search"
     }
   ]
